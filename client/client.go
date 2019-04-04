@@ -147,7 +147,7 @@ func (c *client) read() {
 			var pair uint16
 			err = readBytes(err, c.conn, &pair)
 			if err != nil {
-				logrus.WithError(err).Error("jdwp client encountered error during read")
+				logrus.WithError(err).Debug("jdwp client encountered error during read")
 				return
 			}
 			data := make([]byte, header.Length-HeaderLength)
